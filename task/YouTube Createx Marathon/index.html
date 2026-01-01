@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Createx Construction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
-<body>
+<body id="top">
     <header class="header">
         <div class="container">
             <div class="header-inner">
                 <a href="#" class="logo">CREATE<span>X</span></a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <nav class="nav">
-                    <a href="#">About Us</a>
-                    <a href="../YouTube Createx Marathon/src/pages/Services/services.html">Services</a>
-                    <a href="#">Work</a>
-                    <a href="#">News</a>
-                    <a href="#">Contacts</a>
+                    <a href="#" class="active">About Us</a>
+                    <a href="./src/pages/Services/services.html">Services</a>
+                    <a href="#work">Work</a>
+                    <a href="#news">News</a>
+                    <a href="#contacts">Contacts</a>
                 </nav>
                 <div class="header-contacts">
                     <div class="contact-item">
+                        <!-- <img src="./src/img/header/iPhone.svg" alt="phone"> -->
                         <small>Call us</small>
                         <a href="tel:4055550128">(405) 555-0128</a>
                     </div>
                     <div class="contact-item">
+                        <!-- <img src="./src/img/header/Chat.svg" alt="chat"> -->
                         <small>Talk to us</small>
                         <a href="mailto:hello@createx.com">hello@createx.com</a>
                     </div>
@@ -34,31 +44,122 @@
     </header>
 
     <main>
-        <section class="hero">
-            <button class="arrow arrow-prev" aria-label="Previous slide">←</button>
-            <button class="arrow arrow-next" aria-label="Next slide">→</button>
+        <section class="hero" id="hero">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators custom-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                        <span class="indicator-number">01</span>
+                    </button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2">
+                        <span class="indicator-number">02</span>
+                    </button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3">
+                        <span class="indicator-number">03</span>
+                    </button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4">
+                        <span class="indicator-number">04</span>
+                    </button>
+                </div>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="slide-image" style="background-image: url('./src/img/hero/bg-image.svg')"></div>
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">CREATE<span>X</span><br>CONSTRUCTION</h1>
+                                    <p class="hero-subtitle">
+                                        Building dreams into reality with precision and excellence. Our team of experts delivers unparalleled construction services.
+                                    </p>
+                                    <div class="hero-btns">
+                                        <a href="#about" class="btn btn-outline">Learn more about us</a>
+                                        <a href="#contact-form" class="btn btn-filled">Submit request</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">CREATE<span>X</span><br>CONSTRUCTION</h1>
-                    <p class="hero-subtitle">
-                        Cras ultrices leo vitae non viverra. Fringilla nisi quisque consequat, dignissim vitae proin ipsum sed. Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis.
-                    </p>
-                    <div class="hero-btns">
-                        <a href="#" class="btn btn-outline">Learn more about us</a>
-                        <a href="#" class="btn btn-filled">Submit request</a>
+                    <div class="carousel-item">
+                        <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80')"></div>
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">QUALITY<span>X</span><br>EXCELLENCE</h1>
+                                    <p class="hero-subtitle">
+                                        We combine innovative design with sustainable construction practices for exceptional results every time.
+                                    </p>
+                                    <div class="hero-btns">
+                                        <a href="#services" class="btn btn-outline">View our services</a>
+                                        <a href="#work" class="btn btn-filled">See our projects</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="carousel-item">
+                        <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80')"></div>
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">INNOVATION<span>X</span><br>TECHNOLOGY</h1>
+                                    <p class="hero-subtitle">
+                                        Utilizing cutting-edge technology and materials to create buildings that stand the test of time.
+                                    </p>
+                                    <div class="hero-btns">
+                                        <a href="#about" class="btn btn-outline">Our technology</a>
+                                        <a href="#contact-form" class="btn btn-filled">Get consultation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="carousel-item">
+                        <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=1920&q=80')"></div>
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-content">
+                            <div class="container">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">SUSTAINABLE<span>X</span><br>BUILDING</h1>
+                                    <p class="hero-subtitle">
+                                        Eco-friendly construction solutions that respect our planet while delivering superior quality and design.
+                                    </p>
+                                    <div class="hero-btns">
+                                        <a href="#services" class="btn btn-outline">Sustainable solutions</a>
+                                        <a href="#contact-form" class="btn btn-filled">Start project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <button class="arrow arrow-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="arrow arrow-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
 
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <h2 class="section-title">We are Createx Construction Bureau</h2>
                 <p class="section-subtitle">We are rightfully considered to be the best construction company in the USA.</p>
                 
                 <div class="video-block">
-                    <button class="play-btn" aria-label="Play video">▶</button>
+                    
+                    <a href="https://youtu.be/j-iheFkstFQ?si=dcha0nmuwWEBUoCy" class="play-btn" data-fancybox>
+                        <i class="fas fa-play"></i>
+                    </a>
+                    
+                    <img src="./src/img/site/videoohone.jpg" alt="Video thumbnail" style="display: none;">
                 </div>
             </div>
         </section>
@@ -70,17 +171,17 @@
                 
                 <div class="values-inner">
                     <article class="value-item">
-                        <img class="value-icon" src="./img/logo/ic-like.svg" alt="" aria-hidden="true">
+                        <img class="value-icon" src="./src/img/logo/ic-like.svg" alt="" aria-hidden="true">
                         <h3 class="value-title">Quality</h3>
                         <p class="value-text">Culpa nostrud commodo ea consequat aliquip reprehenderit. Veniam velit nostrud aliquip sunt.</p>
                     </article>
                     <article class="value-item">
-                        <img class="value-icon" src="./img/logo/ic-hand.svg" alt="" aria-hidden="true">
+                        <img class="value-icon" src="./src/img/logo/ic-hand.svg" alt="" aria-hidden="true">
                         <h3 class="value-title">Safety</h3>
                         <p class="value-text">Anim reprehenderit sint voluptate exercitation adipisicing laborum adipisicing. Minim empor est ea.</p>
                     </article>
                     <article class="value-item">
-                        <img class="value-icon" src="./img/logo/ic-slippers.svg" alt="" aria-hidden="true">
+                        <img class="value-icon" src="./src/img/logo/ic-slippers.svg" alt="" aria-hidden="true">
                         <h3 class="value-title">Comfort</h3>
                         <p class="value-text">Sit veniam aute dolore adipisicing nulla sit culpa. Minim mollit voluptate ullamco proident ea ad.</p>
                     </article>
@@ -88,7 +189,7 @@
             </div>
         </section>
 
-        <section class="contact-form-section">
+        <section class="contact-form-section" id="contact-form">
             <div class="container">
                 <div class="form-wrapper">
                     <h3 class="form-title">Want to know more? Ask us a question:</h3>
@@ -111,7 +212,7 @@
             </div>
         </section>
 
-        <section class="services">
+        <section class="services" id="services">
             <div class="container">
                 <h2 class="section-title">Our services</h2>
                 <p class="section-subtitle">Createx Construction Bureau is a construction giant with a full range of construction services.</p>
@@ -129,7 +230,7 @@
                         </div>
                         <h3 class="service-name">Project Development</h3>
                     </article>
-                    <article class="service-card active">
+                    <article class="service-card">
                         <div class="service-icon-wrapper">
                             <img class="service-icon" src="./src/img/our services/Vector.svg" alt="" aria-hidden="true">
                         </div>
@@ -150,20 +251,24 @@
             </div>
         </section>
 
-        <section class="projects">
+        <section class="projects" id="work">
             <div class="container">
                 <div class="projects-header">
                     <h2 class="section-title">Browse our selected projects<br>and learn more about our work</h2>
                     <div class="projects-arrows">
-                        <button class="arrow arrow-small arrow-prev" aria-label="Previous projects">←</button>
-                        <button class="arrow arrow-small arrow-next" aria-label="Next projects">→</button>
+                        <button class="arrow arrow-small arrow-prev" aria-label="Previous projects">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="arrow arrow-small arrow-next" aria-label="Next projects">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
 
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-img">
-                            <img src="./img/site/image(3).jpg" alt="Red Finger Building exterior" loading="lazy">
+                            <img src="./src/img/site/image(3).jpg" alt="Red Finger Building exterior" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Red Finger Building</h3>
@@ -172,7 +277,7 @@
                     </article>
                     <article class="project-card active">
                         <div class="project-img">
-                            <img src="./img/site/image.png" alt="Cubes Building exterior" loading="lazy">
+                            <img src="./src/img/site/image.png" alt="Cubes Building exterior" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">Cubes Building</h3>
@@ -182,7 +287,7 @@
                     </article>
                     <article class="project-card">
                         <div class="project-img">
-                            <img src="./img/site/image(1).png" alt="The Pencil Building exterior" loading="lazy">
+                            <img src="./src/img/site/image(1).png" alt="The Pencil Building exterior" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3 class="project-title">The Pencil Building</h3>
@@ -220,7 +325,7 @@
                                 Ipsum aute sunt aliquip aute et occaecat. Anim minim do cillum eiusmod enim. Consectetur magna cillum consequat minim laboris cillum laboris voluptate minim proident exercitation ullamco.
                             </blockquote>
                             <div class="author-info">
-                                <img src="./img/site/profile-image.png" alt="Shawn Edwards" class="author-img">
+                                <img src="./src/img/site/profile-image.png" alt="Shawn Edwards" class="author-img">
                                 <div class="author-details">
                                     <h4 class="author-name">Shawn Edwards</h4>
                                     <p class="author-position">Position, Company name</p>
@@ -235,8 +340,12 @@
                                 <button class="dot" aria-label="Go to testimonial 4"></button>
                             </div>
                             <div class="testimonial-arrows">
-                                <button class="arrow arrow-small arrow-prev" aria-label="Previous testimonial">←</button>
-                                <button class="arrow arrow-small arrow-next" aria-label="Next testimonial">→</button>
+                                <button class="arrow arrow-small arrow-prev" aria-label="Previous testimonial">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="arrow arrow-small arrow-next" aria-label="Next testimonial">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -292,12 +401,12 @@
             </div>
         </section>
 
-        <section class="news">
+        <section class="news" id="news">
             <div class="container">
                 <h2 class="section-title center">Recent news</h2>
                 <div class="news-grid">
                     <article class="news-card large">
-                        <img src="./img/site/image(6).svg" alt="Solar panels on a building" loading="lazy">
+                        <img src="./src/img/site/image(6).svg" alt="Solar panels on a building" loading="lazy">
                         <div class="news-content">
                             <h3 class="news-title">How to Build Climate Change-Resilient Infrastructure</h3>
                             <div class="news-meta">
@@ -311,7 +420,7 @@
 
                     <div class="news-side">
                         <article class="news-card small">
-                            <img src="./img/site/image(7).svg" alt="Construction site" loading="lazy">
+                            <img src="./src/img/site/image(7).svg" alt="Construction site" loading="lazy">
                             <div class="news-content">
                                 <h3 class="news-title">How Construction Can Help Itself</h3>
                                 <div class="news-meta">
@@ -321,7 +430,7 @@
                             </div>
                         </article>
                         <article class="news-card small">
-                            <img src="./img/site/image(8).svg" alt="Flooring materials" loading="lazy">
+                            <img src="./src/img/site/image(8).svg" alt="Flooring materials" loading="lazy">
                             <div class="news-content">
                                 <h3 class="news-title">Types of Flooring Materials</h3>
                                 <div class="news-meta">
@@ -339,8 +448,8 @@
                 </div>
             </div>
         </section>
-        <!-- Footer form section-->
-        <section class="footer-form">
+
+        <section class="footer-form" id="contacts">
             <div class="container">
                 <div class="footer-form-wrapper">
                     <form class="main-contact-form">
@@ -378,11 +487,21 @@
                 <div class="footer-info">
                     <a href="#" class="logo">CREATE<span>X</span></a>
                     <div class="socials">
-                        <a href="#" title="WhatsApp" aria-label="WhatsApp">W</a>
-                        <a href="#" title="Messenger" aria-label="Messenger">M</a>
-                        <a href="#" title="Facebook" aria-label="Facebook">F</a>
-                        <a href="#" title="Twitter" aria-label="Twitter">T</a>
-                        <a href="#" title="YouTube" aria-label="YouTube">Y</a>
+                        <a href="#" title="WhatsApp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" title="Messenger" aria-label="Messenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </a>
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                     <p>Createx Construction Bureau has been successfully operating in the USA construction market since 2000. We are proud to offer you quality construction and exemplary service.</p>
                 </div>
@@ -409,26 +528,191 @@
                 <div class="footer-col">
                     <h4>WHO WE ARE</h4>
                     <nav class="footer-nav">
-                        <a href="#">About Us</a>
+                        <a href="#about">About Us</a>
                         <a href="#">Available Positions</a>
-                        <a href="#">Contacts</a>
+                        <a href="#contacts">Contacts</a>
                     </nav>
                 </div>
                 <div class="footer-col">
                     <h4>OUR EXPERIENCE</h4>
                     <nav class="footer-nav">
-                        <a href="#">Services</a>
-                        <a href="#">Work</a>
-                        <a href="#">News</a>
+                        <a href="#services">Services</a>
+                        <a href="#work">Work</a>
+                        <a href="#news">News</a>
                     </nav>
                 </div>
             </div>
 
             <div class="footer-copyright">
-                <p>© All rights reserved. Made with <img class="heart-for__footer" src="./img/footer/Heart(2).svg" alt="❤️" aria-hidden="true"> by Createx Studio</p>
-                <a href="#" class="go-top">Go to top <span>▲</span></a>
+                <p>© All rights reserved. Made with <img class="heart-for__footer" src="./src/img/footer/Heart(2).svg" alt="❤️" aria-hidden="true"> by Createx Studio</p>
+                <a href="#top" class="go-top">Go to top <span>▲</span></a>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+    <script>
+        // Initialize Fancybox for video
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Fancybox
+            Fancybox.bind("[data-fancybox]", {
+                // Custom options
+                Thumbs: false,
+                Toolbar: false,
+                closeButton: "top",
+                wheel: false,
+                keyboard: true,
+                animated: false,
+                dragToClose: false,
+                
+                // YouTube video options
+                Youtube: {
+                    controls: 1,
+                    showinfo: 0,
+                    rel: 0,
+                    autoplay: 1
+                }
+            });
+            
+            // Initialize Bootstrap carousel with custom options
+            const heroCarousel = document.getElementById('heroCarousel');
+            if (heroCarousel) {
+                const carousel = new bootstrap.Carousel(heroCarousel, {
+                    interval: 5000, // 5 seconds
+                    wrap: true,
+                    touch: true,
+                    keyboard: true
+                });
+                
+                // Custom indicator click handlers
+                const indicators = document.querySelectorAll('.custom-indicators button');
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', function() {
+                        carousel.to(index);
+                    });
+                });
+                
+                // Update active indicator
+                heroCarousel.addEventListener('slid.bs.carousel', function(event) {
+                    const activeIndex = event.to;
+                    indicators.forEach((indicator, index) => {
+                        if (index === activeIndex) {
+                            indicator.classList.add('active');
+                            indicator.setAttribute('aria-current', 'true');
+                        } else {
+                            indicator.classList.remove('active');
+                            indicator.removeAttribute('aria-current');
+                        }
+                    });
+                });
+            }
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('.nav');
+            
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (nav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuBtn.contains(event.target) && !nav.contains(event.target)) {
+                        nav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('.nav a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        nav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Calculate header height for offset
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // In a real app, you would send this to your server
+                    console.log('Form submitted:', data);
+                    
+                    // Show success message
+                    alert('Thank you! Your message has been sent successfully.');
+                    this.reset();
+                });
+            });
+            
+            // Sticky header on scroll
+            let lastScrollTop = 0;
+            const header = document.querySelector('.header');
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    
+                    if (scrollTop > lastScrollTop) {
+                        // Scrolling down
+                        header.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up
+                        header.style.transform = 'translateY(0)';
+                    }
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
 </body>
 </html>
