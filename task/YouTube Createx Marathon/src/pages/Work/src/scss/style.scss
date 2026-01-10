@@ -1,0 +1,536 @@
+@import url('../fonts/Ubuntu/stylesheet.css');
+
+$orange: #FF5A30;
+$primary-color: #1E212C;
+$gray-text: #787A80;
+$link-color: #424551;
+$color-white: #ffffff;
+$color-gray: #9a9ca5;
+$container-width: 1230px;
+$transition: all 0.3s ease;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: $primary-color;
+    background-color: $color-white;
+}
+
+.container {
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 40px;
+    height: 52px;
+    line-height: 48px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    transition: $transition;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+
+    &--outline {
+        background-color: transparent;
+        border: 2px solid $orange;
+        color: $orange;
+
+        &:hover {
+            background-color: $orange;
+            color: $color-white;
+        }
+    }
+
+    &--fill {
+        background-color: $orange;
+        color: $color-white;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($orange, 10%);
+        }
+    }
+}
+
+.top-wrapper {
+    background-color: #F4F5F6; 
+    background-image: url('../img/header/background\(2\).svg'); 
+    background-repeat: no-repeat;
+    background-position: right top; 
+    background-size: auto; 
+}
+
+.header {
+    background-color: transparent; 
+    padding: 20px 0;
+
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        &-logo { 
+            margin-right: 60px; 
+        }
+
+        &-ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin-right: auto;
+        }
+
+        &-link {
+            text-decoration: none;
+            color: $link-color;
+            font-weight: 700;
+            font-size: 16px;
+            transition: $transition;
+
+            &:hover, &.active {
+                color: $orange;
+            }
+        }
+
+        &-contacts {
+            display: flex;
+            gap: 36px;
+        }
+
+        &-contact {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .label {
+                font-weight: 700;
+                font-size: 14px;
+                color: $link-color;
+                line-height: 1.5;
+            }
+
+            .value {
+                font-size: 18px;
+                color: $primary-color;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.hero {
+    padding: 80px 0 120px;
+    background-color: transparent; 
+
+    .breadcrumbs {
+        display: flex;
+        list-style: none;
+        gap: 8px;
+        margin-bottom: 40px;
+        font-size: 14px;
+        color: $gray-text;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: $transition;
+            &:hover { color: $orange; }
+        }
+
+        li:not(:last-child)::after {
+            content: '/';
+            margin-left: 8px;
+        }
+    }
+
+    &__title {
+        font-size: 72px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $primary-color;
+        margin-bottom: 24px;
+    }
+
+    &__desc {
+        max-width: 600px;
+        font-size: 20px;
+        color: $gray-text;
+    }
+}
+
+.services-tabs {
+    position: relative;
+    z-index: 10;
+    margin-top: -80px; // Поднимаем блок на Hero секцию
+}
+
+.tabs-wrapper {
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 
+                0px 30px 24px -10px rgba(154, 156, 165, 0.05);
+    border-radius: 4px;
+    overflow: hidden; // Чтобы углы фона не вылезали за радиус
+}
+
+.tab-item {
+    flex: 1;
+    padding: 32px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-right: 1px solid #E5E8ED;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            /* Делаем иконку оранжевой по умолчанию, чтобы она не пропадала на белом */
+            filter: invert(47%) sepia(88%) saturate(2844%) hue-rotate(344deg) brightness(101%) contrast(101%);
+            transition: filter 0.3s ease;
+        }
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 16px;
+        color: #424551; // Темно-серый текст, как на макете
+        transition: color 0.3s ease;
+    }
+
+    // Эффект только при наведении (hover)
+    &:hover {
+        background-color: #FF5A30;
+
+        .tab-item__text {
+            color: #FFFFFF;
+        }
+
+        .tab-item__icon img {
+            /* При наведении иконка становится чисто белой */
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+
+// Адаптив: на узких экранах делаем сетку, чтобы 5 табов не слиплись
+@media (max-width: 992px) {
+    .tabs-wrapper {
+        flex-wrap: wrap;
+    }
+    .tab-item {
+        flex: 0 0 33.333%; // По 3 в ряд
+        border-bottom: 1px solid #E5E8ED;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 390px); // Ширина карточки 390px
+    gap: 30px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.project-card {
+    width: 390px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+    transition: all 0.3s ease;
+
+    // Эффект при наведении на ВСЮ карточку
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.15);
+
+        .btn-outline-small {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 16px; // Появляется с отступом
+            height: 44px;    // Фиксированная высота при появлении
+        }
+    }
+}
+
+.project-img {
+    width: 390px;
+    height: 440px; // Высота фото 440px
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.project-info {
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1E212C;
+        margin-bottom: 4px;
+    }
+
+    .project-category {
+        font-size: 14px;
+        color: #787A80;
+        margin-bottom: 0;
+    }
+
+    // Стили кнопки (скрыта по умолчанию)
+    .btn-outline-small {
+        opacity: 0;
+        visibility: hidden;
+        height: 0; // Чтобы не занимала место, пока не навели
+        margin-top: 0;
+        transition: all 0.3s ease;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 32px;
+        border: 1px solid #FF5A30;
+        color: #FF5A30;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        border-radius: 4px;
+
+        &:hover {
+            background: #FF5A30;
+            color: #FFFFFF;
+        }
+    }
+}
+
+// Кнопка Load More
+.portfolio-footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+
+    .load-more {
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #424551;
+        cursor: pointer;
+        &:hover { color: #FF5A30; }
+    }
+}
+
+.footer {
+    background-color: $primary-color;
+    color: $color-white;
+    padding: 80px 0 40px;
+
+    &__container {
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        gap: 60px;
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 25px;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__social-link {
+        opacity: 0.6;
+        transition: $transition;
+
+        &:hover { 
+            opacity: 1; 
+            transform: translateY(-3px);
+        }
+        
+        img { width: 24px; height: 24px; }
+    }
+
+    &__column {
+        flex: 1;
+        &--info { flex: 0 1 495px; }
+        &--subscribe { flex: 0 1 495px; }
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba($color-white, 0.6);
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    &__middle {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+        border-bottom: 1px solid rgba($color-white, 0.1);
+        padding-bottom: 60px;
+    }
+
+    &__address, &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-style: normal;
+        font-size: 14px;
+        color: rgba($color-white, 0.6);
+
+        strong { color: $color-white; }
+    }
+
+    &__link {
+        color: rgba($color-white, 0.6);
+        text-decoration: none;
+        transition: color 0.3s;
+        
+        &:hover { color: $color-white; }
+    }
+
+    &__note {
+        font-size: 11px;
+        color: rgba($color-white, 0.5);
+        margin-top: 15px;
+        line-height: 1.5;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        font-size: 12px;
+    }
+
+    &__copyright {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__go-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        color: $color-white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: opacity 0.3s;
+
+        &:hover { opacity: 0.8; }
+    }
+
+    &__up-icon {
+        width: 40px;
+        height: 40px;
+        background-color: $orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+
+        &::after {
+            content: '▲';
+            font-size: 12px;
+            color: $color-white;
+        }
+    }
+}
+
+.subscribe-form {
+    display: flex;
+    margin-top: 24px;
+
+    &__input {
+        flex-grow: 1;
+        background: rgba($color-white, 0.12);
+        border: 1px solid rgba($color-white, 0.2);
+        border-radius: 4px 0 0 4px;
+        padding: 0 15px;
+        height: 52px;
+        color: $color-white;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus { border-color: rgba($color-white, 0.5); }
+        &::placeholder { color: rgba($color-white, 0.6); }
+    }
+
+    &__button {
+        background-color: $orange;
+        color: $color-white;
+        border: none;
+        padding: 0 32px;
+        font-weight: 700;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background 0.3s;
+        &:hover { background: darken($orange, 10%); }
+    }
+}

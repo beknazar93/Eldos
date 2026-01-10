@@ -66,16 +66,25 @@ body {
     }
 }
 
+.top-wrapper {
+    background-color: #F4F5F6; 
+    background-image: url('../img/header/background.svg'); 
+    background-repeat: no-repeat;
+    background-position: right top; 
+    background-size: auto; 
+}
+
 .header {
-    background-color: $color-white;
+    background-color: transparent; 
     padding: 20px 0;
 
     &__nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
 
-        &-logo { margin-right: 60px; }
+        &-logo { 
+            margin-right: 60px; 
+        }
 
         &-ul {
             display: flex;
@@ -89,39 +98,42 @@ body {
             color: $link-color;
             font-weight: 700;
             font-size: 16px;
-            transition: color 0.3s;
+            transition: $transition;
 
             &:hover, &.active {
                 color: $orange;
             }
         }
 
+        &-contacts {
+            display: flex;
+            gap: 36px;
+        }
+
         &-contact {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-left: 36px;
 
-            div div:first-child {
+            .label {
                 font-weight: 700;
                 font-size: 14px;
                 color: $link-color;
+                line-height: 1.5;
             }
 
-            div div:last-child {
+            .value {
                 font-size: 18px;
                 color: $primary-color;
+                line-height: 1.5;
             }
         }
     }
 }
 
 .hero {
-    background-color: #F4F5F6;
     padding: 80px 0 120px;
-    background-image: url('../img/header/background.svg'); 
-    background-repeat: no-repeat;
-    background-position: right center;
+    background-color: transparent; 
 
     .breadcrumbs {
         display: flex;
@@ -134,6 +146,7 @@ body {
         a {
             text-decoration: none;
             color: inherit;
+            transition: $transition;
             &:hover { color: $orange; }
         }
 
@@ -146,6 +159,7 @@ body {
     &__title {
         font-size: 72px;
         font-weight: 900;
+        letter-spacing: 1px;
         text-transform: uppercase;
         color: $primary-color;
         margin-bottom: 24px;
@@ -157,7 +171,6 @@ body {
         color: $gray-text;
     }
 }
-
 .services-section {
     padding: 120px 0;
 }
